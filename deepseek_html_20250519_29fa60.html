@@ -7,101 +7,201 @@
     <link rel="stylesheet" href="./CSS/styleSheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        .study-room-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 30px auto;
-            max-width: 800px;
-            background: #d4b688;
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #7f6b2f;
+        /* RESET AND OVERRIDE STYLES - More specific to avoid conflicts */
+        body, html {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
         
+        section {
+            min-height: 100vh !important;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            position: relative !important;
+        }
+        
+        /* Override any existing content styles */
+        .content {
+            flex: 1 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Override info styles to ensure centering */
+        .info {
+            width: 100% !important;
+            max-width: 1000px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0 auto !important;
+        }
+        
+        /* Make sure the heading is centered */
+        .info h2 {
+            width: 100% !important;
+            text-align: center !important;
+            margin-bottom: 30px !important;
+        }
+        
+        /* Ensure the container is centered */
+        .study-room-container {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 90% !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            background: #d4b688 !important;
+            padding: 40px !important;
+            border-radius: 20px !important;
+            border: 1px solid #7f6b2f !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Menu items styling */
         .menu-items {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-bottom: 40px;
+            display: flex !important;
+            justify-content: space-around !important;
+            width: 100% !important;
+            margin-bottom: 40px !important;
         }
         
         .menu-item {
-            color: #2b2512;
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
+            color: #2b2512 !important;
+            font-size: 24px !important;
+            font-weight: bold !important;
+            text-decoration: none !important;
+            padding: 10px 20px !important;
+            border-bottom: 3px solid transparent !important;
+            transition: all 0.3s !important;
         }
         
         .menu-item:hover, .menu-item.active {
-            border-bottom: 3px solid #7f6b2f;
-            color: #5a4a2a;
+            border-bottom: 3px solid #7f6b2f !important;
+            color: #5a4a2a !important;
         }
         
+        /* Video container - ensure this is centered */
         .video-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin: 30px 0;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 60px !important;
+            margin: 30px 0 !important;
+            width: 100% !important;
         }
         
         .profile-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #f0e6d2;
-            border: 5px solid #7f6b2f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #5a4a2a;
-            font-weight: bold;
+            width: 150px !important;
+            height: 150px !important;
+            border-radius: 50% !important;
+            background: #f0e6d2 !important;
+            border: 5px solid #7f6b2f !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #5a4a2a !important;
+            font-weight: bold !important;
+            font-size: 18px !important;
         }
         
         .call-controls {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 30px !important;
+            margin-top: 30px !important;
+            width: 100% !important;
         }
         
         .control-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #7f6b2f;
-            color: white;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: #7f6b2f !important;
+            color: white !important;
+            border: none !important;
+            font-size: 20px !important;
+            cursor: pointer !important;
+            transition: all 0.3s !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         
         .control-btn:hover {
-            background: #5a4a2a;
-            transform: scale(1.1);
+            background: #5a4a2a !important;
+            transform: scale(1.1) !important;
         }
         
         .control-btn.end-call {
-            background: #c0392b;
+            background: #c0392b !important;
         }
         
         .control-btn.end-call:hover {
-            background: #962d22;
+            background: #962d22 !important;
         }
         
         .logo-title {
-            font-size: 32px;
-            color: #2b2512;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: bold;
+            font-size: 32px !important;
+            color: #2b2512 !important;
+            text-align: center !important;
+            margin-bottom: 30px !important;
+            font-weight: bold !important;
+        }
+        
+        /* Ensure media icons stay at bottom */
+        .media-icons {
+            margin-top: auto !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        /* Updated Header Navigation Styles */
+        header .navigation {
+            display: flex !important;
+            gap: 15px !important;
+            margin-right: 50px !important;
+        }
+
+        .nav-pill {
+            color: #7f6b2f !important;
+            background: #FAF0E6 !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            letter-spacing: 1px !important;
+            padding: 12px 25px !important;
+            border-radius: 25px !important;
+            font-size: 16px !important;
+            transition: all 0.3s ease !important;
+            border: 2px solid transparent !important;
+        }
+
+        .nav-pill:hover {
+            background-color: #e6d7c3 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .nav-pill.active {
+            background-color: #d4b688 !important;
+            color: #2b2512 !important;
+            border: 2px solid #7f6b2f !important;
+            font-weight: 600 !important;
+        }
+
+        /* Remove old navigation styles */
+        header .navigation a:not(.nav-pill) {
+            display: none !important;
         }
     </style>
 </head>
@@ -112,11 +212,11 @@
                 <a href="./index.html" class="logo">Tutor IT</a>
             </h2>
             <div class="navigation">
-                <a href="./index.html">Home</a>
-                <a href="#">Subjects</a>
-                <a href="#" class="active">Study Room</a>
-                <a href="#">Quizzes</a>
-                <a href="#">Logout</a>
+                <a href="./index.html" class="nav-pill">Home</a>
+                <a href="#" class="nav-pill">Mata Kuliah</a>
+                <a href="#" class="nav-pill active">Ruang Belajar</a>
+                <a href="#" class="nav-pill">Review</a>
+                <a href="#" class="nav-pill">Kuis</a>
             </div>
         </header>
 
@@ -128,11 +228,10 @@
                     <div class="logo-title">Tutor IT</div>
                     
                     <div class="menu-items">
-                        <a href="./index.html">Home</a>
-                        <a href="#">Mata Kuliah</a>
-                        <a href="deepseek_html_20250519_29fa60.html">Ruang Belajar</a>
-                        <a href="#">Review</a>
-                        <a href="quiz">Kuis</a>
+                        <a href="#" class="menu-item active">HomePage</a>
+                        <a href="#" class="menu-item">Subject</a>
+                        <a href="#" class="menu-item">Study Room</a>
+                        <a href="#" class="menu-item">Review</a>
                     </div>
                     
                     <div class="video-container">
